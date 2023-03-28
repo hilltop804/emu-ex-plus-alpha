@@ -33,7 +33,9 @@ jobs:
         echo "IMAGINE_SDK_PATH=${{ github.workspace }}/imagine-sdk" >> $GITHUB_ENV
         
     - name: Flatpak SDK
-      run: flatpak install flathub org.kde.Platform//5.15-22.08 org.kde.Sdk//5.15-22.08
+      run:  |
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak install flathub org.kde.Platform//5.15-22.08 org.kde.Sdk//5.15-22.08
 
     - name: Bundled libraries
       run: |
