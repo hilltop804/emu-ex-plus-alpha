@@ -21,7 +21,7 @@ jobs:
 
     - name: Install build dependencies
       run: |
-        sudo apt-get update
+        apt-get update
         sudo apt-get install -y clang-15 cmake glibc-source
         sudo apt-get install -y libasound2-dev libbluetooth-dev libboost-dev libdrm-dev libegl-dev
         sudo apt-get install -y libflac-dev libvorbis-dev libogg-dev flatpak flatpak-builder
