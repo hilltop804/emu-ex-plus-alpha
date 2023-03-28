@@ -1,0 +1,18 @@
+app-id: org.ExPlusAlpha.GBAemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: GBAemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: GBAemu
+    sources:
+      type: file
+      path: ../GBA.emu/target/linux/gbaemu
