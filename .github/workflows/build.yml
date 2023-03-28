@@ -34,8 +34,8 @@ jobs:
         
     - name: Flatpak SDK
       run:  |
-        flatpak remote-add --user --assumeyes flathub https://flathub.org/repo/flathub.flatpakrepo
-        flatpak install flathub --user org.kde.Platform//5.15-22.08 org.kde.Sdk//5.15-22.08
+        flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak install flathub org.kde.Platform//5.15-22.08 org.kde.Sdk//5.15-22.08
 
     - name: Bundled libraries
       run: |
