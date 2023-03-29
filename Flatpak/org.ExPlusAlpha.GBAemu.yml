@@ -15,7 +15,7 @@ modules:
   - name: GBAemu
     buildsystem: simple
     build-commands:
-      - cp gbaemu app/bin/gbaemu
+      - cp gbaemu /app/bin/gbaemu
 
     sources:
       - type: file
