@@ -14,8 +14,6 @@ finish-args:
 modules:
   - name: GBAemu
     buildsystem: simple
-    build-commands:
-      - install gbaemu
     sources:
       - type: file
         path: ../GBA.emu/target/linux/gbaemu
