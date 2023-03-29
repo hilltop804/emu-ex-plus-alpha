@@ -15,7 +15,7 @@ modules:
   - name: GBAemu
     buildsystem: simple
     build-commands:
-      - cp ../GBA.emu/target/linux/gbaemu app/bin
+      - cp GBA.emu/target/linux/gbaemu app/bin
     sources:
       - type: file
-        path: ../GBA.emu/target/linux/gbaemu
+        path: GBA.emu/target/linux/gbaemu
