@@ -19,10 +19,12 @@ jobs:
     - name: Install build dependencies
       run: |
         sudo apt update
-        sudo apt install -y clang-15 cmake glibc-source
+        sudo apt install -y clang-15 cmake glibc-source flatpak flatpak-builder
         sudo apt install -y libasound2-dev libbluetooth-dev libboost-dev libdrm-dev libegl-dev
         sudo apt install -y libvorbis-dev libogg-dev libflac-dev
         sudo apt install -y libpulse-dev libxfixes-dev libxi-dev libxrandr-dev
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        sudo flatpak install -y --noninteractive flathub org.kde.Platform//5.15-22.08 org.kde.Sdk//5.15-22.08
 
     - name: Declare variables
       run: |
