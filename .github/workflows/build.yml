@@ -36,7 +36,7 @@ jobs:
 
     - name: Build bundled libraries
       run: |
-        #cd $IMAGINE_PATH/bundle/all/src/libarchive && make -f linux-x86_64.mk install V=1 -j2 CC=gcc-12 CXX=g++-12
+        cd $IMAGINE_PATH/bundle/all/src/libarchive && make -f linux-x86_64.mk install V=1 -j2 CC=gcc-12 CXX=g++-12
 
     - name: Build frameworks
       run: |
