@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.NESemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: nesemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: NESemu
+    buildsystem: simple
+    build-commands:
+      - install -D nesemu /app/bin/nesemu
+    sources:
+      - type: file
+        path: ../NES.emu/target/linux/nesemu

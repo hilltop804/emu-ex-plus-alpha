@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.NGPemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: ngpemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: NGPemu
+    buildsystem: simple
+    build-commands:
+      - install -D ngpemu /app/bin/ngpemu
+    sources:
+      - type: file
+        path: ../NGP.emu/target/linux/ngpemu

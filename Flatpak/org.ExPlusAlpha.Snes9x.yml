@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.Snes9x
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: s9xp
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: Snes9x
+    buildsystem: simple
+    build-commands:
+      - install -D s9xp /app/bin/s9xp
+    sources:
+      - type: file
+        path: ../Snes9x/target/linux/s9xp

@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.GBCemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: gbcemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: GBCemu
+    buildsystem: simple
+    build-commands:
+      - install -D gbcemu /app/bin/gbcemu
+    sources:
+      - type: file
+        path: ../GBC.emu/target/linux/gbcemu

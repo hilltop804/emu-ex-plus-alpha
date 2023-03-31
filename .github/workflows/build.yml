@@ -53,19 +53,7 @@ jobs:
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
-
-    - name: Copy GBA.emu artifact
-      if: ${{ matrix.image == 'GBA.emu' }}
-      run: |
-        cp GBA.emu/target/linux/gbaemu EX-Emulators/GbaEmu
-
-    - name: Upload GBA.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'GBA.emu' }}
-      with: 
-        name: GBAemu
-        path: ${{ github.workspace }}/GBA.emu/target/linux/gbaemu
+        flatpak-builder build --repo=EX-Emulators/GBA --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -73,17 +61,10 @@ jobs:
         cd GBC.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy GBC.emu artifact
+    - name: Flatpak GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
-      run: |
-        cp GBC.emu/target/linux/gbcemu EX-Emulators/GbcEmu
-
-    - name: Upload GBC.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'GBC.emu' }}
-      with: 
-        name: GBCemu
-        path: ${{ github.workspace }}/GBC.emu/target/linux/gbcemu
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/GBC --force-clean Flatpak/org.ExPlusAlpha.GBCemu.yml
 
     - name: Build MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
@@ -91,17 +72,10 @@ jobs:
         cd MD.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy MD.emu artifact
+    - name: Flatpak MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
-      run: |
-        cp MD.emu/target/linux/mdemu EX-Emulators/MdEmu
-
-    - name: Upload MD.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'MD.emu' }}
-      with: 
-        name: MDemu
-        path: ${{ github.workspace }}/MD.emu/target/linux/mdemu
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/MD --force-clean Flatpak/org.ExPlusAlpha.MDemu.yml    
 
     - name: Build NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -109,17 +83,10 @@ jobs:
         cd NEO.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy NEO.emu artifact
+    - name: Flatpak NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
-      run: |
-        cp NEO.emu/target/linux/neoemu EX-Emulators/NeoEmu
-
-    - name: Upload NEO.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'NEO.emu' }}
-      with: 
-        name: NEOemu
-        path: ${{ github.workspace }}/NEO.emu/target/linux/neoemu
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/NEO --force-clean Flatpak/org.ExPlusAlpha.NEOemu.yml  
 
     - name: Build NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
@@ -127,17 +94,10 @@ jobs:
         cd NES.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy NES.emu artifact
+    - name: Flatpak NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
-      run: |
-        cp NES.emu/target/linux/nesemu EX-Emulators/NesEmu
-
-    - name: Upload NES.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'NES.emu' }}
-      with: 
-        name: NESemu
-        path: ${{ github.workspace }}/NES.emu/target/linux/nesemu
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/NES --force-clean Flatpak/org.ExPlusAlpha.NESemu.yml  
 
     - name: Build NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
@@ -145,17 +105,10 @@ jobs:
         cd NGP.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy NGP.emu artifact
+    - name: Flatpak NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
-      run: |
-        cp NGP.emu/target/linux/ngpemu EX-Emulators/NgpEmu
-
-    - name: Upload NGP.emu artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'NGP.emu' }}
-      with: 
-        name: NGPemu
-        path: ${{ github.workspace }}/NGP.emu/target/linux/ngpemu
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/NGP --force-clean Flatpak/org.ExPlusAlpha.NGPemu.yml  
 
     - name: Build Snes9x.emu
       if: ${{ matrix.image == 'Snes9x' }}
@@ -163,17 +116,10 @@ jobs:
         cd Snes9x
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
 
-    - name: Copy Snes9x artifact
+    - name: Flatpak Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
-      run: |
-        cp Snes9x/target/linux/s9xp EX-Emulators/Snes9xEXPlus
-
-    - name: Upload Snes9x artifact
-      uses: actions/upload-artifact@v3
-      if: ${{ matrix.image == 'Snes9x' }}
-      with: 
-        name: Snes9xEXPlus
-        path: ${{ github.workspace }}/Snes9x/target/linux/s9xp
+      run: |        
+        flatpak-builder build --repo=EX-Emulators/Snes9x --force-clean Flatpak/org.ExPlusAlpha.Snes9x.yml  
 
     - name: Upload EX-Emulators artifacts
       uses: actions/upload-artifact@v3

@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.NEOemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: neoemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: NEOemu
+    buildsystem: simple
+    build-commands:
+      - install -D neoemu /app/bin/neoemu
+    sources:
+      - type: file
+        path: ../NEO.emu/target/linux/neoemu

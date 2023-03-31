@@ -1,0 +1,21 @@
+app-id: org.ExPlusAlpha.MDemu
+runtime: org.kde.Platform
+runtime-version: '5.15-22.08'
+sdk: org.kde.Sdk
+command: mdemu
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=pulseaudio"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+modules:
+  - name: MDemu
+    buildsystem: simple
+    build-commands:
+      - install -D mdemu /app/bin/mdemu
+    sources:
+      - type: file
+        path: ../MD.emu/target/linux/mdemu
