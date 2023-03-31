@@ -2,7 +2,7 @@ app-id: org.ExPlusAlpha.GBAemu
 runtime: org.kde.Platform
 runtime-version: '5.15-22.08'
 sdk: org.kde.Sdk
-command: GBAemu
+command: gbaemu
 finish-args:
   - "--share=ipc"
   - "--socket=x11"
