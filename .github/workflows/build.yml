@@ -30,6 +30,7 @@ jobs:
       run: |
         mkdir imagine-sdk
         mkdir EX-Emulators
+        mkdir flatpak-dir
         echo "EMUFRAMEWORK_PATH=${{ github.workspace }}/EmuFramework" >> $GITHUB_ENV
         echo "IMAGINE_PATH=${{ github.workspace }}/imagine" >> $GITHUB_ENV
         echo "IMAGINE_SDK_PATH=${{ github.workspace }}/imagine-sdk" >> $GITHUB_ENV
@@ -53,8 +54,9 @@ jobs:
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        flatpak-builder build-bundle --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
-        cp build/org.ExPlusAlpha.GBAemu.flatpak Ex-Emulators
+        flatpak-builder --force-clean --repo=flatpack-dir/GBAemu build-dir Flatpak/org.ExPlusAlpha.GBAemu.yml
+        flatpak build-bundle flatpak-dir/GBAemu GBAemu.flatpak org.ExPlusAlpha.GBAemu
+        cp flatpak-dir/GBAemu/GBAemu.flatpak Ex-Emulators
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
