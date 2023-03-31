@@ -54,6 +54,7 @@ jobs:
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
         flatpak-builder build-bundle --repo=EX-Emulators/GBA --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
+        cp build/org.ExPlusAlpha.GBAemu.flatpak Ex-Emulators
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
