@@ -1,3 +1,6 @@
+#!/bin/bash
+#Install/update emulator packages
+
 flatpak --if-not-exists remote-add GBA GBA
 flatpak --if-not-exists remote-add GBC GBC
 flatpak --if-not-exists remote-add MD MD
