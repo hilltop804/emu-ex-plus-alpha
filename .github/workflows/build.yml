@@ -55,8 +55,8 @@ jobs:
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
         flatpak-builder --force-clean --repo=EX-Emulators/GBA --verbose build Flatpak/org.ExPlusAlpha.GBAemu.yml
-        flatpak --user remote-add --no-gpg-verify GBA-repo EX-Emulators/GBA
-        flatpak build-bundle --verbose EX-Emulators/GBA GBAemu.flatpak org.ExPlusAlpha.GBAemu
+        #flatpak remote-add --no-gpg-verify GBA-repo EX-Emulators/GBA
+        flatpak build-bundle export --verbose EX-Emulators/GBA GBAemu.flatpak org.ExPlusAlpha.GBAemu
         #cp repo/GBAemu.flatpak Ex-Emulators
 
     - name: Build GBC.emu
