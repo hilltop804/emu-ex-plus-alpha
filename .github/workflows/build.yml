@@ -53,7 +53,7 @@ jobs:
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        flatpak-builder build ../Flatpak/org.ExPlusAlpha.GBAemu.yml --force-clean
+        flatpak-builder build Flatpak/org.ExPlusAlpha.GBAemu.yml --force-clean
 
     - name: Copy GBA.emu artifact
       if: ${{ matrix.image == 'GBA.emu' }}
