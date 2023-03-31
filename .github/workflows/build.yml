@@ -126,9 +126,9 @@ jobs:
       run: |        
         mkdir EX-Emulators/Entries
         mkdir EX-Emulators/Icons
-        cp Flatpak/install.sh EX-Emulators
-        cp Flatpak/Entries/* EX-Emulators/Entries
-        cp Flatpak/Icons/* EX-Emulators/Icons
+        cp Flatpak/Bundle/install.sh EX-Emulators
+        cp Flatpak/Bundle/Entries/* EX-Emulators/Entries
+        cp Flatpak/Bundle/Icons/* EX-Emulators/Icons
 
     - name: Upload EX-Emulators artifacts
       uses: actions/upload-artifact@v3
