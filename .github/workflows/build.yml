@@ -53,7 +53,7 @@ jobs:
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/GBA --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
+        flatpak-builder build-bundle --repo=EX-Emulators/GBA --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -64,7 +64,7 @@ jobs:
     - name: Flatpak GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/GBC --force-clean Flatpak/org.ExPlusAlpha.GBCemu.yml
+        flatpak-builder build-bundle --repo=EX-Emulators/GBC --force-clean Flatpak/org.ExPlusAlpha.GBCemu.yml
 
     - name: Build MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
@@ -75,7 +75,7 @@ jobs:
     - name: Flatpak MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/MD --force-clean Flatpak/org.ExPlusAlpha.MDemu.yml    
+        flatpak-builder build-bundle --repo=EX-Emulators/MD --force-clean Flatpak/org.ExPlusAlpha.MDemu.yml    
 
     - name: Build NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -86,7 +86,7 @@ jobs:
     - name: Flatpak NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/NEO --force-clean Flatpak/org.ExPlusAlpha.NEOemu.yml  
+        flatpak-builder build-bundle --repo=EX-Emulators/NEO --force-clean Flatpak/org.ExPlusAlpha.NEOemu.yml  
 
     - name: Build NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
@@ -97,7 +97,7 @@ jobs:
     - name: Flatpak NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/NES --force-clean Flatpak/org.ExPlusAlpha.NESemu.yml  
+        flatpak-builder build-bundle --repo=EX-Emulators/NES --force-clean Flatpak/org.ExPlusAlpha.NESemu.yml  
 
     - name: Build NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
@@ -108,7 +108,7 @@ jobs:
     - name: Flatpak NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/NGP --force-clean Flatpak/org.ExPlusAlpha.NGPemu.yml  
+        flatpak-builder build-bundle --repo=EX-Emulators/NGP --force-clean Flatpak/org.ExPlusAlpha.NGPemu.yml  
 
     - name: Build Snes9x.emu
       if: ${{ matrix.image == 'Snes9x' }}
@@ -119,7 +119,7 @@ jobs:
     - name: Flatpak Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
       run: |        
-        flatpak-builder build --repo=EX-Emulators/Snes9x --force-clean Flatpak/org.ExPlusAlpha.Snes9x.yml  
+        flatpak-builder build-bundle --repo=EX-Emulators/Snes9x --force-clean Flatpak/org.ExPlusAlpha.Snes9x.yml  
 
     - name: Upload EX-Emulators artifacts
       uses: actions/upload-artifact@v3
