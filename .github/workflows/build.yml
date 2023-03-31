@@ -56,7 +56,7 @@ jobs:
       run: |        
         flatpak-builder --force-clean --repo=repo/GBAemu build-dir Flatpak/org.ExPlusAlpha.GBAemu.yml
         flatpak build-bundle repo/GBAemu GBAemu.flatpak org.ExPlusAlpha.GBAemu
-        cp flatpak-dir/GBAemu/GBAemu.flatpak Ex-Emulators
+        cp repo/GBAemu/GBAemu.flatpak Ex-Emulators
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
