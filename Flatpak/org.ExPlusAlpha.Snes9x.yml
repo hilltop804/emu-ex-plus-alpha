@@ -11,6 +11,7 @@ finish-args:
   - "--share=network"
   - "--device=all"
   - "--filesystem=home"
+  - "--filesystem=/run/media"
 modules:
   - name: Snes9x
     buildsystem: simple

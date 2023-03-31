@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=Game;
+Type=Application
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=mdemu org.ExPlusAlpha.MDemu
+Name=MDemu
+Terminal=False
+Icon=/home/deck/.local/share/icons/exemu/md.png

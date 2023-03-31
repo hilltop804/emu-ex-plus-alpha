@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=Game;
+Type=Application
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gbaemu org.ExPlusAlpha.GBAemu
+Name=GBAemu
+Terminal=False
+Icon=/home/deck/.local/share/icons/exemu/gba.png
