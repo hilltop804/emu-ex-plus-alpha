@@ -53,8 +53,8 @@ jobs:
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        flatpak-builder build-bundle build-dir --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
-        cp build-dir/org.ExPlusAlpha.GBAemu.flatpak Ex-Emulators
+        flatpak-builder build-bundle --force-clean Flatpak/org.ExPlusAlpha.GBAemu.yml
+        cp build/org.ExPlusAlpha.GBAemu.flatpak Ex-Emulators
 
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -144,6 +144,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         path: dist
+        file: Flatpak/install.sh
 
     - name: Re-zip artifacts
       run: |
