@@ -51,7 +51,7 @@ jobs:
       run: |        
         cd GBA.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/gbaemu EX-Emulators/Native/gbaemu
+        cp target/linux/gbaemu ../EX-Emulators/Native/gbaemu
         
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
@@ -63,7 +63,7 @@ jobs:
       run: |        
         cd GBC.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/gbcemu EX-Emulators/Native/gbcemu
+        cp target/linux/gbcemu ../EX-Emulators/Native/gbcemu
         
     - name: Flatpak GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -75,7 +75,7 @@ jobs:
       run: |        
         cd MD.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/mdemu EX-Emulators/Native/mdemu
+        cp target/linux/mdemu ../EX-Emulators/Native/mdemu
         
     - name: Flatpak MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
@@ -87,7 +87,7 @@ jobs:
       run: |        
         cd NEO.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/neoemu EX-Emulators/Native/neoemu
+        cp target/linux/neoemu ../EX-Emulators/Native/neoemu
         
     - name: Flatpak NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -99,7 +99,7 @@ jobs:
       run: |        
         cd NES.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/nesemu EX-Emulators/Native/nesemu
+        cp target/linux/nesemu ../EX-Emulators/Native/nesemu
         
     - name: Flatpak NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
@@ -111,7 +111,7 @@ jobs:
       run: |        
         cd NGP.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/ngpemu EX-Emulators/Native/ngpemu
+        cp target/linux/ngpemu ../EX-Emulators/Native/ngpemu
         
     - name: Flatpak NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
@@ -123,7 +123,7 @@ jobs:
       run: |        
         cd Snes9x
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/s9xp EX-Emulators/Native/snes9x
+        cp target/linux/s9xp ../EX-Emulators/Native/snes9x
         
     - name: Flatpak Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
