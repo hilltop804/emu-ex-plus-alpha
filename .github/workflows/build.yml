@@ -31,7 +31,6 @@ jobs:
         mkdir imagine-sdk
         mkdir EX-Emulators
         mkdir EX-Emulators/Emu
-        mkdir EX-Emulators/Native        
         echo "EMUFRAMEWORK_PATH=${{ github.workspace }}/EmuFramework" >> $GITHUB_ENV
         echo "IMAGINE_PATH=${{ github.workspace }}/imagine" >> $GITHUB_ENV
         echo "IMAGINE_SDK_PATH=${{ github.workspace }}/imagine-sdk" >> $GITHUB_ENV
@@ -51,7 +50,11 @@ jobs:
       run: |        
         cd GBA.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/gbaemu EX-Emulators/Native
+        
+    - name: Copy GBA.emu artifact
+      if: ${{ matrix.image == 'GBA.emu' }}
+      run: |
+        cp GBA.emu/target/linux/gbaemu EX-Emulators/Native
 
     - name: Flatpak GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
@@ -63,7 +66,11 @@ jobs:
       run: |        
         cd GBC.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
-        cp target/linux/gbcemu EX-Emulators/Native
+
+    - name: Copy GBC.emu artifact
+      if: ${{ matrix.image == 'GBC.emu' }}
+      run: |
+        cp GBC.emu/target/linux/gbcemu EX-Emulators/Native
 
     - name: Flatpak GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -77,6 +84,11 @@ jobs:
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
         cp target/linux/mdemu EX-Emulators/Native
 
+    - name: Copy MD.emu artifact
+      if: ${{ matrix.image == 'MD.emu' }}
+      run: |
+        cp MD.emu/target/linux/mdemu EX-Emulators/Native
+
     - name: Flatpak MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
       run: |        
@@ -88,6 +100,11 @@ jobs:
         cd NEO.emu
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
         cp target/linux/neoemu EX-Emulators/Native
+
+    - name: Copy NEO.emu artifact
+      if: ${{ matrix.image == 'NEO.emu' }}
+      run: |
+        cp NEO.emu/target/linux/neoemu EX-Emulators/Native
 
     - name: Flatpak NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -101,6 +118,11 @@ jobs:
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
         cp target/linux/nesemu EX-Emulators/Native
 
+    - name: Copy NES.emu artifact
+      if: ${{ matrix.image == 'NES.emu' }}
+      run: |
+        cp NES.emu/target/linux/nesemu EX-Emulators/Native
+
     - name: Flatpak NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
       run: |        
@@ -113,6 +135,11 @@ jobs:
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
         cp target/linux/ngpemu EX-Emulators/Native
 
+    - name: Copy NGP.emu artifact
+      if: ${{ matrix.image == 'NGP.emu' }}
+      run: |
+        cp NGP.emu/target/linux/ngpemu EX-Emulators/Native
+
     - name: Flatpak NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
       run: |        
@@ -124,6 +151,11 @@ jobs:
         cd Snes9x
         make -f linux-x86_64-release.mk V=1 -j2 CC=gcc-12 CXX=g++-12
         cp target/linux/s9xp EX-Emulators/Native
+
+    - name: Copy Snes9x artifact
+      if: ${{ matrix.image == 'Snes9x' }}
+      run: |
+        cp Snes9x/target/linux/s9xp EX-Emulators/Native
 
     - name: Flatpak Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
