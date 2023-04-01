@@ -9,13 +9,13 @@ flatpak --if-not-exists --no-gpg-verify --user remote-add NES ./Emu/NES
 flatpak --if-not-exists --no-gpg-verify --user remote-add NGP ./Emu/NGP
 flatpak --if-not-exists --no-gpg-verify --user remote-add Snes9x ./Emu/Snes9x
 
-flatpak install --or-update GBA org.ExPlusAlpha.GBAemu
-flatpak install --or-update GBC org.ExPlusAlpha.GBCemu
-flatpak install --or-update MD org.ExPlusAlpha.MDemu
-flatpak install --or-update NEO org.ExPlusAlpha.NEOemu
-flatpak install --or-update NES org.ExPlusAlpha.NESemu
-flatpak install --or-update NGP org.ExPlusAlpha.NGPemu
-flatpak install --or-update Snes9x org.ExPlusAlpha.Snes9x
+flatpak install -y --or-update GBA org.ExPlusAlpha.GBAemu
+flatpak install -y --or-update GBC org.ExPlusAlpha.GBCemu
+flatpak install -y --or-update MD org.ExPlusAlpha.MDemu
+flatpak install -y --or-update NEO org.ExPlusAlpha.NEOemu
+flatpak install -y --or-update NES org.ExPlusAlpha.NESemu
+flatpak install -y --or-update NGP org.ExPlusAlpha.NGPemu
+flatpak install -y --or-update Snes9x org.ExPlusAlpha.Snes9x
 
 if [ ! -d /home/deck/.local/share/icons/exemu ]; then mkdir /home/deck/.local/share/icons/exemu; fi
 cp ./Icons/* /home/deck/.local/share/icons/exemu
