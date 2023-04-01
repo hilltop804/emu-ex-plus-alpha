@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Game;
 Type=Application
-Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=s9xp org.ExPlusAlpha.Snes9x
+Exec=/usr/bin/flatpak run --arch=x86_64 --command=s9xp org.ExPlusAlpha.Snes9x
 Name=Snes9x
 Terminal=False
 Icon=/home/deck/.local/share/icons/exemu/s9xp.png
