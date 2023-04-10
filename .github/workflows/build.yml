@@ -25,7 +25,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y clang-15 cmake glibc-source flatpak flatpak-builder
         sudo apt-get install -y libasound2-dev libbluetooth-dev libboost-dev libdrm-dev libegl-dev
-        sudo apt-get install -y libvorbis-dev libogg-dev
+        sudo apt-get install -y libvorbis-dev libogg-dev libflac-dev
         sudo apt-get install -y libpulse-dev libxfixes-dev libxi-dev libxrandr-dev
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         
@@ -42,7 +42,6 @@ jobs:
     - name: Build bundled libraries
       run: |
         cd $IMAGINE_PATH/bundle/all/src/libarchive && make -f linux-x86_64.mk install V=1 -j4 CC=gcc-12 CXX=g++-12
-        cd $IMAGINE_PATH/bundle/all/src/flac && make -f linux-x86_64.mk install V=1 -j4 CC=gcc-12 CXX=g++-12        
 
     - name: Build frameworks
       run: |
