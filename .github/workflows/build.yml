@@ -184,7 +184,10 @@ jobs:
         cp -r helper/emu-ex-plus-alpha/Bundle/Icons EX-Emulators
         
     - name: Zip repo
-      run: sudo zip EX-Emulators/repo.zip EX-Emulators/repo/. -r        
+      run: |        
+        sudo zip EX-Emulators/repo.zip EX-Emulators/repo/. -r
+        rm -r EX-Emulators/repo
+      
         
     - name: Upload EX-Emulators artifacts
       uses: actions/upload-artifact@v3
