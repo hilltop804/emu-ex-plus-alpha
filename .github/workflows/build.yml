@@ -186,7 +186,7 @@ jobs:
     - name: Zip repo
       run: |        
         sudo zip EX-Emulators/repo.zip EX-Emulators/repo/. -r
-        rm -r EX-Emulators/repo
+        sudo rm -r EX-Emulators/repo
       
         
     - name: Upload EX-Emulators artifacts
