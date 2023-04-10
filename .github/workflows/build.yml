@@ -33,7 +33,8 @@ jobs:
       run: |
         mkdir imagine-sdk
         mkdir EX-Emulators
-        mkdir EX-Emulators/repo        
+        mkdir EX-Emulators/repo
+        mkdir EX-Emulators/linux
         echo "EMUFRAMEWORK_PATH=${{ github.workspace }}/EmuFramework" >> $GITHUB_ENV
         echo "IMAGINE_PATH=${{ github.workspace }}/imagine" >> $GITHUB_ENV
         echo "IMAGINE_SDK_PATH=${{ github.workspace }}/imagine-sdk" >> $GITHUB_ENV
