@@ -63,24 +63,10 @@ jobs:
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: GBA.emu
         lower: gbaemu
-
-    - name: Package GBA.emu
-      if: ${{ matrix.image == 'GBA.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: GBA.emu
-        lower: gbaemu
-        
-    - name: Upload GBA.emu
-      if: ${{ matrix.image == 'GBA.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: GBA.emu
-        path: gbaemu.zip
         
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -95,24 +81,10 @@ jobs:
       if: ${{ matrix.image == 'GBC.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: GBC.emu
         lower: gbcemu
-
-    - name: Package GBC.emu
-      if: ${{ matrix.image == 'GBC.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: GBC.emu
-        lower: gbcemu
-        
-    - name: Upload GBC.emu
-      if: ${{ matrix.image == 'GBC.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: GBC.emu
-        path: gbcemu.zip
         
     - name: Build MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
@@ -127,24 +99,10 @@ jobs:
       if: ${{ matrix.image == 'MD.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: MD.emu
         lower: mdemu
-
-    - name: Package MD.emu
-      if: ${{ matrix.image == 'MD.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: MD.emu
-        lower: mdemu
-        
-    - name: Upload MD.emu
-      if: ${{ matrix.image == 'MD.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: MD.emu
-        path: mdemu.zip
         
     - name: Build NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -159,24 +117,10 @@ jobs:
       if: ${{ matrix.image == 'NEO.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: NEO.emu
         lower: neoemu
-
-    - name: Package NEO.emu
-      if: ${{ matrix.image == 'NEO.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: NEO.emu
-        lower: neoemu
-        
-    - name: Upload NEO.emu
-      if: ${{ matrix.image == 'NEO.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: NEO.emu
-        path: neoemu.zip
         
     - name: Build NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
@@ -191,24 +135,7 @@ jobs:
       if: ${{ matrix.image == 'NES.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
-      env:
-        proper: NES.emu
-        lower: nesemu
-
-    - name: Package NES.emu
-      if: ${{ matrix.image == 'NES.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: NES.emu
-        lower: nesemu
-        
-    - name: Upload NES.emu
-      if: ${{ matrix.image == 'NES.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: NES.emu
-        path: nesemu.zip
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: NES.emu
         lower: nesemu
@@ -226,24 +153,7 @@ jobs:
       if: ${{ matrix.image == 'NGP.emu' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
-      env:
-        proper: NGP.emu
-        lower: ngpemu
-
-    - name: Package NGP.emu
-      if: ${{ matrix.image == 'NGP.emu' }}
-      run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: NGP.emu
-        lower: ngpemu
-        
-    - name: Upload NGP.emu
-      if: ${{ matrix.image == 'NGP.emu' }}
-      uses: actions/upload-artifact@v3
-      with: 
-        name: NGP.emu
-        path: ngpemu.zip
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: NGP.emu
         lower: ngpemu
@@ -261,21 +171,17 @@ jobs:
       if: ${{ matrix.image == 'Snes9x' }}
       run: |        
         sudo flatpak-builder --repo=EX-Emulators/repo/$lower --install-deps-from=flathub --install --force-clean build helper/emu-ex-plus-alpha/org.ExPlusAlpha.$lower.yml
+        sudo chmod 777 EX-Emulators/repo/$lower
       env:
         proper: Snes9x
         lower: s9xp
 
-    - name: Package Snes9x
-      if: ${{ matrix.image == 'Snes9x' }}
+    - name: Add bundled files
       run: |        
-        sudo zip -r $lower.zip EX-Emulators/repo/$lower
-      env:
-        proper: Snes9x
-        lower: s9xp
-        
-    - name: Upload Snes9x
-      if: ${{ matrix.image == 'Snes9x' }}
+        cp helper/emu-ex-plus-alpha/Bundle/install.sh EX-Emulators/repo
+
+    - name: Upload EX-Emulators artifacts
       uses: actions/upload-artifact@v3
       with: 
-        name: Snes9x
-        path: s9xp.zip
+        name: EX-Emulators
+        path: EX-Emulators/
