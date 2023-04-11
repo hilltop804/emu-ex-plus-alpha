@@ -55,7 +55,6 @@ jobs:
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: GBA.emu
         lower: gbaemu
@@ -67,13 +66,30 @@ jobs:
       env:
         proper: GBA.emu
         lower: gbaemu
+
+    - name: Package GBA.emu
+      if: ${{ matrix.image == 'GBA.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: GBA.emu
+        lower: gbaemu
+        
+    - name: Upload GBA.emu
+      if: ${{ matrix.image == 'GBA.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: GBA.emu
+        lower: gbaemu
         
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: GBC.emu
         lower: gbcemu
@@ -85,13 +101,30 @@ jobs:
       env:
         proper: GBC.emu
         lower: gbcemu
+
+    - name: Package GBC.emu
+      if: ${{ matrix.image == 'GBC.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: GBC.emu
+        lower: gbcemu
+        
+    - name: Upload GBC.emu
+      if: ${{ matrix.image == 'GBC.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: GBC.emu
+        lower: gbcemu
         
     - name: Build MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: MD.emu
         lower: mdemu
@@ -103,13 +136,30 @@ jobs:
       env:
         proper: MD.emu
         lower: mdemu
+
+    - name: Package MD.emu
+      if: ${{ matrix.image == 'MD.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: MD.emu
+        lower: mdemu
+        
+    - name: Upload MD.emu
+      if: ${{ matrix.image == 'MD.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: MD.emu
+        lower: mdemu
         
     - name: Build NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: NEO.emu
         lower: neoemu
@@ -121,13 +171,30 @@ jobs:
       env:
         proper: NEO.emu
         lower: neoemu
+
+    - name: Package NEO.emu
+      if: ${{ matrix.image == 'NEO.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: NEO.emu
+        lower: neoemu
+        
+    - name: Upload NEO.emu
+      if: ${{ matrix.image == 'NEO.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: NEO.emu
+        lower: neoemu
         
     - name: Build NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: NES.emu
         lower: nesemu
@@ -139,13 +206,30 @@ jobs:
       env:
         proper: NES.emu
         lower: nesemu
+
+    - name: Package NES.emu
+      if: ${{ matrix.image == 'NES.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: NES.emu
+        lower: nesemu
+        
+    - name: Upload NES.emu
+      if: ${{ matrix.image == 'NES.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: NES.emu
+        lower: nesemu
         
     - name: Build NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: NGP.emu
         lower: ngpemu
@@ -157,13 +241,30 @@ jobs:
       env:
         proper: NGP.emu
         lower: ngpemu
+
+    - name: Package NGP.emu
+      if: ${{ matrix.image == 'NGP.emu' }}
+      run: |        
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: NGP.emu
+        lower: ngpemu
+        
+    - name: Upload NGP.emu
+      if: ${{ matrix.image == 'NGP.emu' }}
+      uses: actions/upload-artifact@v3
+      with: 
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: NGP.emu
+        lower: ngpemu
         
     - name: Build Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
       run: |        
         cd $proper
         make -f linux-x86_64-release.mk V=1 -j4 CC=gcc-12 CXX=g++-12
-        cp target/linux/$lower ../EX-Emulators/linux/$lower
       env:
         proper: Snes9x
         lower: s9xp
@@ -176,18 +277,20 @@ jobs:
         proper: Snes9x
         lower: s9xp
 
-    - name: Copy files
+    - name: Package Snes9x
+      if: ${{ matrix.image == 'Snes9x' }}
       run: |        
-        cp EmuFramework/res/ui/ui.png EX-Emulators/linux
-        cp -r EmuFramework/res/shaders EX-Emulators/linux
-        cp -r helper/emu-ex-plus-alpha/Bundle/Entries EX-Emulators
-        cp -r helper/emu-ex-plus-alpha/Bundle/Icons EX-Emulators
+        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+      env:
+        proper: Snes9x
+        lower: s9xp
         
-    - name: Zip repo
-      run: sudo zip -r EX-Emulators.zip EX-Emulators
-        
-    - name: Upload EX-Emulators artifacts
+    - name: Upload Snes9x
+      if: ${{ matrix.image == 'Snes9x' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: EX-Emulators
-        path: EX-Emulators.zip
+        name: $proper
+        path: $proper.zip
+      env:
+        proper: Snes9x
+        lower: s9xp
