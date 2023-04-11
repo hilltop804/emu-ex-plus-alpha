@@ -70,7 +70,7 @@ jobs:
     - name: Package GBA.emu
       if: ${{ matrix.image == 'GBA.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: GBA.emu
         lower: gbaemu
@@ -79,11 +79,8 @@ jobs:
       if: ${{ matrix.image == 'GBA.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
-      env:
-        proper: GBA.emu
-        lower: gbaemu
+        name: GBA.emu
+        path: gbaemu.zip
         
     - name: Build GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
@@ -105,7 +102,7 @@ jobs:
     - name: Package GBC.emu
       if: ${{ matrix.image == 'GBC.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: GBC.emu
         lower: gbcemu
@@ -114,11 +111,8 @@ jobs:
       if: ${{ matrix.image == 'GBC.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
-      env:
-        proper: GBC.emu
-        lower: gbcemu
+        name: GBC.emu
+        path: gbcemu.zip
         
     - name: Build MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
@@ -140,7 +134,7 @@ jobs:
     - name: Package MD.emu
       if: ${{ matrix.image == 'MD.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: MD.emu
         lower: mdemu
@@ -149,11 +143,8 @@ jobs:
       if: ${{ matrix.image == 'MD.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
-      env:
-        proper: MD.emu
-        lower: mdemu
+        name: MD.emu
+        path: mdemu.zip
         
     - name: Build NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
@@ -175,7 +166,7 @@ jobs:
     - name: Package NEO.emu
       if: ${{ matrix.image == 'NEO.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: NEO.emu
         lower: neoemu
@@ -184,11 +175,8 @@ jobs:
       if: ${{ matrix.image == 'NEO.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
-      env:
-        proper: NEO.emu
-        lower: neoemu
+        name: NEO.emu
+        path: neoemu.zip
         
     - name: Build NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
@@ -210,7 +198,7 @@ jobs:
     - name: Package NES.emu
       if: ${{ matrix.image == 'NES.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: NES.emu
         lower: nesemu
@@ -219,8 +207,8 @@ jobs:
       if: ${{ matrix.image == 'NES.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
+        name: NES.emu
+        path: nesemu.zip
       env:
         proper: NES.emu
         lower: nesemu
@@ -245,7 +233,7 @@ jobs:
     - name: Package NGP.emu
       if: ${{ matrix.image == 'NGP.emu' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: NGP.emu
         lower: ngpemu
@@ -254,8 +242,8 @@ jobs:
       if: ${{ matrix.image == 'NGP.emu' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
+        name: NGP.emu
+        path: ngpemu.zip
       env:
         proper: NGP.emu
         lower: ngpemu
@@ -280,7 +268,7 @@ jobs:
     - name: Package Snes9x
       if: ${{ matrix.image == 'Snes9x' }}
       run: |        
-        sudo zip -r $proper.zip EX-Emulators/repo/$lower
+        sudo zip -r $lower.zip EX-Emulators/repo/$lower
       env:
         proper: Snes9x
         lower: s9xp
@@ -289,8 +277,8 @@ jobs:
       if: ${{ matrix.image == 'Snes9x' }}
       uses: actions/upload-artifact@v3
       with: 
-        name: $proper
-        path: $proper.zip
+        name: Snes9x
+        path: $s9xp.zip
       env:
         proper: Snes9x
         lower: s9xp
