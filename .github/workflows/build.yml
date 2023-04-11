@@ -278,7 +278,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with: 
         name: Snes9x
-        path: $s9xp.zip
-      env:
-        proper: Snes9x
-        lower: s9xp
+        path: s9xp.zip
