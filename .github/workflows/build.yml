@@ -179,4 +179,4 @@ jobs:
         name: EX-Emulators
         path: |
           EX-Emulators/
-          !.lock
+          !EX-Emulators/repo/*/.lock
